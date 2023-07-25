@@ -208,9 +208,11 @@ img {
   display: block;
   margin: auto;
   min-width: 169px;
+
   padding: 16px 32px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
@@ -220,6 +222,7 @@ img {
   font-family: Roboto, sans-serif;
   color: var(--color-white);
   background-color: var(--color-iris);
+  height: 56px;
 }
 
 .hero-btn:focus,
@@ -307,6 +310,7 @@ img {
 .team-item {
   text-align: center;
   width: calc((100% - 72px) / 4);
+  border-radius: 0px 0px 4px 4px;
   background-color: var(--white-color);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -318,7 +322,7 @@ img {
 }
 
 .team-container {
-  padding: 32px 0 24px 0;
+  padding: 32px 0;
 }
 
 .team-text {
@@ -342,8 +346,8 @@ img {
 }
 
 .footer-logo {
-  display: block;
-  margin-bottom: 17px;
+  display: inline-block;
+  margin-bottom: 16px;
   font-family: Raleway, sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -388,20 +392,24 @@ img {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+
   color: var(--color-iris);
   background-color: var(--color-cloud);
 
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
     0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+
   border: 1px solid var(--border-color);
 
   cursor: pointer;
+  border: 1px solid #e7e9fc;
 }
 
 .card-btn:hover,
 .card-btn:focus {
   color: var(--color-white);
   background-color: var(--color-ocean);
+  border: 1px solid transparent;
 }
 
 .pic-list {
