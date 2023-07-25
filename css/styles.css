@@ -10,8 +10,6 @@
   --color-light-slate: #8e8f99;
   --color-cornflower: #e7e9fc;
   --color-cloud: #f4f4fd;
-  --color-navy-blue-modal: #2e2f42;
-  --color-grey: #2e2f42;
   --color-white: #ffffff;
   --color-dairy: #fcfcfc;
 }
@@ -22,15 +20,60 @@ body {
   background-color: var(--color-white);
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+  outline: 2px solid red;
+}
+
 .title-top {
+  margin-bottom: 72px;
   font-size: 36px;
 
   line-height: 1.11;
   letter-spacing: 0.02em;
+  text-align: center;
   text-decoration: none;
 }
 
 .address {
+  display: block;
   font-style: normal;
 }
 
@@ -49,10 +92,36 @@ body {
   text-decoration: none;
 }
 
+.header-nav,
+.address {
+  display: flex;
+}
+
 /* 
         HEADER
 */
+.header {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  max-width: 1440px;
+  border-bottom: 1px solid var(--color-cornflower);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
 .header-nav-logo {
+  margin-right: 76px;
   font-family: Raleway, sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -66,7 +135,16 @@ body {
   color: var(--color-navy-blue);
 }
 
+.header-nav-list {
+  display: flex;
+  gap: 40px;
+}
+
 .header-nav-link {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 24px 0;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -77,6 +155,15 @@ body {
 .header-nav-link:hover,
 .header-nav-link:focus {
   color: var(--color-ocean);
+}
+
+.address {
+  margin-left: auto;
+}
+
+.address-list {
+  display: flex;
+  gap: 40px;
 }
 
 .address-link {
@@ -95,11 +182,23 @@ body {
       HERO
 */
 .hero {
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  max-width: 1440px;
+  max-height: 600px;
+  padding-top: 188px;
+  padding-bottom: 188px;
   background-color: var(--color-navy-blue);
 }
 
 .hero-title {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 496px;
+  margin-bottom: 48px;
   font-size: 56px;
+  font-weight: 700;
   line-height: 1.07;
   letter-spacing: 0.02em;
   text-align: center;
@@ -107,12 +206,19 @@ body {
 }
 
 .hero-btn {
-  cursor: pointer;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
+  display: block;
+  margin: auto;
+  min-width: 169px;
+  padding: 16px 32px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.64px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
   color: var(--color-white);
   background-color: var(--color-iris);
 }
@@ -125,15 +231,37 @@ body {
 /* 
       OTHER
 */
+.other {
+  padding: 120px 0;
+}
 
-.other-title {
+.container-other {
+  padding-bottom: 0;
   color: var(--color-navy-blue);
 }
 
+.other-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.other-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.other-title {
+  margin-bottom: 8px;
+}
+
 .other-text {
+  flex-basis: auto;
+  max-width: 264px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  background-color: var(--color-white);
   color: var(--color-slate);
 }
 
@@ -141,48 +269,84 @@ body {
          DOING
 */
 
+.doing {
+  padding: 120px 0;
+}
+
 .doing-title {
   text-align: center;
   color: var(--color-navy-blue);
   text-transform: capitalize;
 }
 
+.doing-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
 /* 
        TEAM
 */
 .team {
+  padding: 120px 0;
   background-color: var(--color-cloud);
 }
 
-.team-list {
-  background-color: #ffffff;
-}
-
-.team-title {
+.team-titles {
+  /* margin-bottom: 72px; */
   text-align: center;
   text-transform: capitalize;
   color: var(--color-navy-blue);
 }
 
+.team-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
 .team-item {
-  background-color: #ffffff;
+  text-align: center;
+  width: calc((100% - 72px) / 4);
+  /* border-radius: 0px 0px 4px 4px; */
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.team-title {
+  margin-bottom: 8px;
+  color: var(--color-navy-blue);
+}
+
+.team-container {
+  padding: 32px 0 24px 0;
 }
 
 .team-text {
+  flex-basis: auto;
+  max-width: 264px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
   color: var(--color-slate);
+  /* background-color: var(--color-white); */
 }
 
 /* 
          FOOTER
 */
 .footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-color: var(--color-navy-blue);
 }
 
 .footer-logo {
+  display: block;
+  margin-bottom: 17px;
   font-family: Raleway, sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -206,7 +370,22 @@ body {
 /* 
                            Portfolio
 */
+.card {
+  padding-bottom: 120px;
+  padding-top: 96px;
+}
+
+.card-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 72px;
+}
+
 .card-btn {
+  padding: 12px 24px;
+  border-radius: 4px;
   font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -214,6 +393,10 @@ body {
   letter-spacing: 0.04em;
   color: var(--color-iris);
   background-color: var(--color-cloud);
+
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
 
   cursor: pointer;
 }
@@ -224,7 +407,23 @@ body {
   background-color: var(--color-ocean);
 }
 
+.pic-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  row-gap: 48px;
+}
+
+.pic-content {
+  border: 1px solid var(--color-cornflower);
+  border-top: none;
+  padding: 32px 16px;
+  background-color: var(--color-white);
+}
+
 .pic-title {
+  margin-bottom: 8px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
